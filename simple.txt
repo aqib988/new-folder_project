@@ -1,0 +1,131 @@
+using System;
+
+public class HelloWorld
+{
+   
+    public static double CalculateCarCharges(double hour)
+
+        {
+
+            double charge = 4.0;
+
+            if (hour > 3)
+
+            {
+
+                hour = Math.Ceiling(hour - 3);
+
+                charge += hour * 1.0;
+
+            }
+
+ 
+
+            if (charge > 20.0)
+
+            {
+
+                charge = 20.0;
+            }
+                return charge;
+
+        }
+       
+    public static double CalculateBikeCharges(double hour)
+
+        {
+
+            double charge = 2.0;
+
+            if (hour > 3)
+
+            {
+
+                hour = Math.Ceiling(hour - 3);
+
+                charge += hour * .5;
+
+            }
+
+ 
+
+            if (charge > 10.0)
+
+            {
+
+                charge = 10.0;
+            }
+                return charge;
+
+        }
+       
+    public static double CalculateBusCharges(double hour)
+
+        {
+
+            double charge = 6.0;
+
+            if (hour > 3)
+
+            {
+
+                hour = Math.Ceiling(hour - 3);
+
+                charge += hour * 1.5;
+
+            }
+
+ 
+
+            if (charge > 30.0)
+
+            {
+
+                charge = 30.0;
+            }
+                return charge;
+
+        }
+    public static void Main(string[] args)
+    {
+
+            double hours;
+
+            double carCharges;
+            double bikeCharges;
+            double busCharges;
+
+
+                Console.Write("Enter the number of hours :");
+
+        hours = Math.Ceiling(Convert.ToDouble(Console.ReadLine()));
+
+                if (hours < 1 || hours >24)
+
+                {
+
+                  Console.WriteLine("Invalid Entry - try again: ");
+
+                }
+
+                else
+
+                {
+
+                    carCharges = CalculateCarCharges(hours);
+                    bikeCharges = CalculateBikeCharges(hours);
+                    busCharges = CalculateBusCharges(hours);
+                   
+
+                    Console.WriteLine("Bike Parking charges for the customer: {0:C}", bikeCharges);
+                   
+                    Console.WriteLine("Car Parking charges for the customer: {0:C}", carCharges);
+                   
+                    Console.WriteLine("Bus Parking charges for the customer: {0:C}", busCharges);
+
+
+                }
+
+           
+    }
+}
